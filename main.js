@@ -6,5 +6,14 @@ console.log(bulb, button);
 
 /* Listener with anonymus function */
 button.addEventListener("click", function() {
-    bulb.src = "./img/yellow_lamp.png";
+    const buttonLabel = button.innerHTML;
+    
+    /* Check if turn on or off */
+    if (buttonLabel.includes("Accendi")) {
+        bulb.src = "./img/yellow_lamp.png";
+        button.innerHTML = "Spegni";
+    } else {
+        bulb.src = "./img/white_lamp.png";
+        button.innerHTML = "Accendi";
+    }
 })
